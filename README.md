@@ -1,18 +1,24 @@
-CS 61 Problem Set 3
+CS 61 Problem Set 3 - Kernel
 ===================
 
-**Fill out both this file and `AUTHORS.md` before submitting.** We grade
-anonymously, so put all personally identifying information, including
-collaborators, in `AUTHORS.md`.
+## Note
+This repo stores my submission to CS61's PSET3 for Fall 2022. This repo will only be public during the Spring semester to avoid students being able to use my code in future iterations (the class runs every Fall).
 
-Grading notes (if any)
-----------------------
+## About
+
+In this PSET we had to implement process memory isolation, virtual memory and some system calls for WeensyOS, a tiny half-implemented OS provided to us. You can find more <href src="https://cs61.seas.harvard.edu/site/2022/WeensyOS/#gsc.tab=0">details here</href>.
+
+## What I implemented
+
+I wrote the bulk of <b>kernel.cc, p-munmap.cc and p-sleep.cc</b>. From memory I had to modify kernel.hh, lib.cc, lib.hh to limited degrees.
+
+## My implementation
+
+I completed all parts of the PSET, alongside the following for extra credit:
+
 Hit 's' to try my sleep extra credit
 Hit 'm' to try my munmap extra credit (details on both below)
 
-
-Extra credit attempted (if any)
--------------------------------
 I attempted:
  - a sleep syscall. This can put a process to sleep for a specified time period
    and will wake it up again when this timeout expires. You can see this by running p-sleep (make run-sleep, or hit 's').
@@ -28,6 +34,3 @@ I attempted:
     -> I gave munmap 3 * PAGESIZE - 2 and it still munmaps 3 full pages, as per  the manual it should unmap any page containing a PART of
        the indicated range are unmapped
     -> You can see the three leaked pages (which we deliberately leak to show munmap worked as intended)
-
- - Copy on write. I attempted this but removed it as I didn't get it working properly in time for this submission, hoping to submit this later
-   when we can submit extra credit later in the semester.
