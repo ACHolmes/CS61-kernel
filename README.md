@@ -6,7 +6,7 @@ This repo stores my submission to CS61's PSET3 for Fall 2022. This repo will onl
 
 ## About
 
-In this PSET we had to implement process memory isolation, virtual memory and some system calls for WeensyOS, a tiny half-implemented OS provided to us. You can find more <href src="https://cs61.seas.harvard.edu/site/2022/WeensyOS/#gsc.tab=0">details here</href>.
+In this PSET we had to implement process memory isolation, virtual memory and some system calls for WeensyOS, a tiny half-implemented OS provided to us. You can find [more details here](https://cs61.seas.harvard.edu/site/2022/WeensyOS/#gsc.tab=0).
 
 ## What I implemented
 
@@ -30,7 +30,7 @@ I attempted:
  - munmap and page_free. These remove pages from maps, and I have a test program p-munmap to demonstrate munmap (make run-munmap, or hit 'm').
    This is less exciting than the last one, it runs until it runs out of memory, and then it munmaps the same three pages forever. I did this
    to show that it behaves as per the requirements of munmap:
-   
+
     -> Having no allocated pages in the munmapped region is not an error (per the manual), it just does nothing as expected
 
     -> I gave munmap 3 * PAGESIZE - 2 and it still munmaps 3 full pages, as per  the manual it should unmap any page containing a PART of
