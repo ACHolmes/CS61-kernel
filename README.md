@@ -31,6 +31,8 @@ I attempted:
    This is less exciting than the last one, it runs until it runs out of memory, and then it munmaps the same three pages forever. I did this
    to show that it behaves as per the requirements of munmap:
     -> Having no allocated pages in the munmapped region is not an error (per the manual), it just does nothing as expected
+    
     -> I gave munmap 3 * PAGESIZE - 2 and it still munmaps 3 full pages, as per  the manual it should unmap any page containing a PART of
        the indicated range are unmapped
+
     -> You can see the three leaked pages (which we deliberately leak to show munmap worked as intended)
